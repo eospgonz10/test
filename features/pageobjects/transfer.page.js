@@ -26,9 +26,13 @@ class TransferPage extends Page {
   }
 
   async transfer(amount, from, to) {
+    await this.inputAmount.waitForDisplayed({ timeout: 5000 });
     await this.inputAmount.setValue(amount);
+    await this.inputFrom.waitForDisplayed({ timeout: 5000 });
     await this.inputFrom.selectByVisibleText(from);
+    await this.inputTo.waitForDisplayed({ timeout: 5000 });
     await this.inputTo.selectByVisibleText(to);
+    await this.btnSubmit.waitForDisplayed({ timeout: 5000 });
     await this.btnSubmit.click();
   }
 
