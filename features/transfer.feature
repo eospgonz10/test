@@ -10,4 +10,4 @@ Feature: Transfer funds between accounts
 
     Examples:
       | fromAccountId | toAccountId | amount | message            |
-      |         21780 |       21891 |    100 | Transfer Complete! |
+      |         21780 |       21891 |    999 | Transfer Complete! |
