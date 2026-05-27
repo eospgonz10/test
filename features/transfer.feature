@@ -1,7 +1,7 @@
 Feature: Transfer funds between accounts
 
   Background:
-    Given I login with username john and password demo
+    Given I login with username christg and password christg123
 
   Scenario Outline: As a user, I want to transfer funds between accounts
     Given I login in my account and go to transfer funds page
@@ -10,4 +10,4 @@ Feature: Transfer funds between accounts
 
     Examples:
       | fromAccountId | toAccountId | amount | message            |
-      |         17229 |       17340 |    100 | Transfer Complete! |
+      |         21780 |       21891 |    100 | Transfer Complete! |
