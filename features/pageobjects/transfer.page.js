@@ -10,7 +10,7 @@ class TransferPage extends Page {
    */
 
   get inputAmount() {
-    return $('//input[@id='amount']');
+    return $("//input[@id='amount']");
   }
 
   get inputFrom() {
