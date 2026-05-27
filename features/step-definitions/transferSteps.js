@@ -27,7 +27,5 @@ When(
 
 Then(/^The message should be (.*)$/, async (message) => {
   await expect($('//*[@id="showResult"]/h1')).toBeExisting();
-  await expect($('//*[@id="showResult"]/h1')).toHaveTextContaining(
-    message
-  );
+  await expect($('//*[@id="showResult"]/h1')).toHaveTextContaining(message);
 });
