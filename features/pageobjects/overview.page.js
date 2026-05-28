@@ -21,8 +21,9 @@ class OverviewPage extends Page {
     return $(`//a[normalize-space()='${accountId}']`);
   }
 
-  openOverview() {
-    return super.open("overview");
+  async openOverview() {
+    await super.open("overview");
+    await this.overviewPanel.waitForDisplayed({ timeout: 5000 });
   }
 
   async selectAccount(accountId) {

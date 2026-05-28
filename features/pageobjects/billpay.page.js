@@ -53,8 +53,9 @@ class BillPayPage extends Page {
     return $("//span[@id='validationModel-verifyAccount-mismatch']");
   }
 
-  open() {
-    return super.open("billpay");
+  async open() {
+    await super.open("billpay");
+    await this.payeeName.waitForDisplayed({ timeout: 5000 });
   }
 
   async fillBillPaymentForm(data) {
