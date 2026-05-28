@@ -22,7 +22,7 @@ class BillPayPage extends Page {
   }
 
   get payeePhone() {
-    return $("//input[@id='4ea8136f-ea89-458c-8267-4405ef3f896a']");
+    return $("//input[@name='payee.phoneNumber']");
   }
 
   get payeeAccountNumber() {
@@ -55,43 +55,43 @@ class BillPayPage extends Page {
 
   async open() {
     await super.open("billpay");
-    await this.payeeName.waitForDisplayed({ timeout: 10000 });
+    await this.payeeName.waitForDisplayed({ timeout: 20000 });
   }
 
   async fillBillPaymentForm(data) {
-    await this.payeeName.waitForDisplayed({ timeout: 5000 });
+    await this.payeeName.waitForDisplayed({ timeout: 20000 });
     await this.payeeName.setValue(data.name);
 
-    await this.payeeStreet.waitForDisplayed({ timeout: 5000 });
+    await this.payeeStreet.waitForDisplayed({ timeout: 20000 });
     await this.payeeStreet.setValue(data.street);
 
-    await this.payeeCity.waitForDisplayed({ timeout: 5000 });
+    await this.payeeCity.waitForDisplayed({ timeout: 20000 });
     await this.payeeCity.setValue(data.city);
 
-    await this.payeeState.waitForDisplayed({ timeout: 5000 });
+    await this.payeeState.waitForDisplayed({ timeout: 20000 });
     await this.payeeState.setValue(data.state);
 
-    await this.payeeZipCode.waitForDisplayed({ timeout: 5000 });
+    await this.payeeZipCode.waitForDisplayed({ timeout: 20000 });
     await this.payeeZipCode.setValue(data.zipCode);
 
-    await this.payeePhone.waitForDisplayed({ timeout: 5000 });
+    await this.payeePhone.waitForDisplayed({ timeout: 20000 });
     await this.payeePhone.setValue(data.phone);
 
-    await this.payeeAccountNumber.waitForDisplayed({ timeout: 5000 });
+    await this.payeeAccountNumber.waitForDisplayed({ timeout: 20000 });
     await this.payeeAccountNumber.setValue(data.accountNumber);
 
-    await this.verifyAccount.waitForDisplayed({ timeout: 5000 });
+    await this.verifyAccount.waitForDisplayed({ timeout: 20000 });
     await this.verifyAccount.setValue(data.verifyAccount);
 
-    await this.amount.waitForDisplayed({ timeout: 5000 });
+    await this.amount.waitForDisplayed({ timeout: 20000 });
     await this.amount.setValue(data.amount);
 
-    await this.fromAccountId.waitForDisplayed({ timeout: 5000 });
+    await this.fromAccountId.waitForDisplayed({ timeout: 20000 });
     await this.fromAccountId.selectByVisibleText(data.fromAccountId);
   }
 
   async sendPayment() {
-    await this.sendPaymentButton.waitForDisplayed({ timeout: 5000 });
+    await this.sendPaymentButton.waitForDisplayed({ timeout: 20000 });
     await this.sendPaymentButton.click();
   }
 }

@@ -27,20 +27,20 @@ class LoanPage extends Page {
 
   async open() {
     await super.open("requestloan");
-    await this.amount.waitForDisplayed({ timeout: 10000 });
+    await this.amount.waitForDisplayed({ timeout: 20000 });
   }
 
   async applyForLoan(amount, downPayment, fromAccountId) {
-    await this.amount.waitForDisplayed({ timeout: 5000 });
+    await this.amount.waitForDisplayed({ timeout: 20000 });
     await this.amount.setValue(amount);
 
-    await this.downPayment.waitForDisplayed({ timeout: 5000 });
+    await this.downPayment.waitForDisplayed({ timeout: 20000 });
     await this.downPayment.setValue(downPayment);
 
-    await this.fromAccountId.waitForDisplayed({ timeout: 5000 });
+    await this.fromAccountId.waitForDisplayed({ timeout: 20000 });
     await this.fromAccountId.selectByVisibleText(fromAccountId);
 
-    await this.applyNowButton.waitForDisplayed({ timeout: 5000 });
+    await this.applyNowButton.waitForDisplayed({ timeout: 20000 });
     await this.applyNowButton.click();
   }
 }

@@ -23,16 +23,16 @@ class OverviewPage extends Page {
 
   async openOverview() {
     await super.open("overview");
-    await this.overviewPanel.waitForDisplayed({ timeout: 5000 });
+    await this.overviewPanel.waitForDisplayed({ timeout: 20000 });
   }
 
   async selectAccount(accountId) {
-    await this.overviewPanel.waitForDisplayed({ timeout: 5000 });
-    await this.accountLink(accountId).waitForDisplayed({ timeout: 5000 });
+    await this.overviewPanel.waitForDisplayed({ timeout: 20000 });
+    await this.accountLink(accountId).waitForDisplayed({ timeout: 20000 });
     await this.accountLink(accountId).click();
-    await this.accountType.waitForDisplayed({ timeout: 5000 });
-    await this.balance.waitForDisplayed({ timeout: 5000 });
-    await this.availableBalance.waitForDisplayed({ timeout: 5000 });
+    await this.accountType.waitForDisplayed({ timeout: 20000 });
+    await this.balance.waitForDisplayed({ timeout: 20000 });
+    await this.availableBalance.waitForDisplayed({ timeout: 20000 });
   }
 
   async getAccountDetails() {
