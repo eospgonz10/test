@@ -16,13 +16,14 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
 });
 
 Then(/^I should see a text saying (.*)$/, async (message) => {
-  if (message == "Error!") {
-    // invalid username or password
-    await expect($('.title')).toBeExisting();
-    await expect($('.title')).toHaveTextContaining(message);
-  } else {
-    // valid username or password
-    await expect($('.title')).toBeExisting();
-    await expect($('.title')).toHaveTextContaining(message);
-  }
+  const title = $('.title');
+
+  await title.waitForDisplayed({ timeout: 5000 });
+  await browser.waitUntil(
+    async () => (await title.getText()).includes(message),
+    {
+      timeout: 10000,
+      timeoutMsg: `Expected title to contain ${message}`,
+    }
+  );
 });

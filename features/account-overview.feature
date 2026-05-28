@@ -1,7 +1,7 @@
 Feature: Consulta de estados
 
   Background:
-    Given I am logged in with john and demo
+    Given I login with username john and password demo
     And I am on the overview page
 
   Scenario Outline: Ver detalle de una cuenta

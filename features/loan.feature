@@ -1,7 +1,8 @@
 Feature: Préstamos
 
   Background:
-    Given I am on the request loan page
+    Given I login with username john and password demo
+    And I am on the request loan page
 
   Scenario: Solicitar un préstamo aprobado
     When I apply for a loan with amount 200, down payment 5 and from account 12345

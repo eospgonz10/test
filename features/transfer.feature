@@ -1,7 +1,7 @@
 Feature: Transfer funds between accounts
 
   Background:
-    Given I login with username christg and password christg123
+    Given I login with username john and password demo
 
   Scenario Outline: As a user, I want to transfer funds between accounts
     Given I login in my account and go to transfer funds page

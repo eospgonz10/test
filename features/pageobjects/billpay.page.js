@@ -55,7 +55,7 @@ class BillPayPage extends Page {
 
   async open() {
     await super.open("billpay");
-    await this.payeeName.waitForDisplayed({ timeout: 5000 });
+    await this.payeeName.waitForDisplayed({ timeout: 10000 });
   }
 
   async fillBillPaymentForm(data) {

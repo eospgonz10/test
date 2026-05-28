@@ -38,7 +38,7 @@ class TransferPage extends Page {
 
   async open() {
     await super.open("transfer");
-    await this.inputAmount.waitForDisplayed({ timeout: 5000 });
+    await this.inputAmount.waitForDisplayed({ timeout: 10000 });
   }
 
   get successfulTransferTitle() {

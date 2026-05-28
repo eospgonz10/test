@@ -1,7 +1,7 @@
 Feature: Pagos
 
   Background:
-    Given I am logged in for bill pay
+    Given I login with username john and password demo
     And I am on the bill pay page
 
   Scenario: Realizar un pago exitoso

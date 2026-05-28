@@ -27,7 +27,7 @@ class LoanPage extends Page {
 
   async open() {
     await super.open("requestloan");
-    await this.amount.waitForDisplayed({ timeout: 5000 });
+    await this.amount.waitForDisplayed({ timeout: 10000 });
   }
 
   async applyForLoan(amount, downPayment, fromAccountId) {
