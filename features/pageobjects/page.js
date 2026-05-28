@@ -8,8 +8,12 @@ export default class Page {
    * Opens a sub page of the page
    * @param path path of the sub page (e.g. /path/to/page.html)
    */
-  open(path) {
-    return browser.url(`${config.baseUrl}/${path}.htm`);
+  open(path = "") {
+    const targetUrl = path
+      ? `${config.baseUrl}/${path}.htm`
+      : `${config.baseUrl}`;
+
+    return browser.url(targetUrl);
   }
 }
 
