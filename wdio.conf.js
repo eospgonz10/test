@@ -144,6 +144,7 @@ export const config = {
         require: [
         "./features/step-definitions/steps.js",
         "./features/step-definitions/overviewSteps.js",
+        "./features/step-definitions/billpaySteps.js",
         "./features/step-definitions/transferSteps.js",
         ],        // <boolean> show full backtrace for errors
         backtrace: false,
