@@ -23,6 +23,7 @@ class OverviewPage extends Page {
 
   async openOverview() {
     await super.open("overview");
+    await browser.waitUntil(async () => (await browser.execute(() => document.readyState)) === 'complete', { timeout: 20000 });
     await this.overviewPanel.waitForDisplayed({ timeout: 20000 });
   }
 

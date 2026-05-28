@@ -55,6 +55,7 @@ class BillPayPage extends Page {
 
   async open() {
     await super.open("billpay");
+    await browser.waitUntil(async () => (await browser.execute(() => document.readyState)) === 'complete', { timeout: 20000 });
     await this.payeeName.waitForDisplayed({ timeout: 20000 });
   }
 
@@ -87,7 +88,11 @@ class BillPayPage extends Page {
     await this.amount.setValue(data.amount);
 
     await this.fromAccountId.waitForDisplayed({ timeout: 20000 });
-    await this.fromAccountId.selectByVisibleText(data.fromAccountId);
+    try {
+      await this.fromAccountId.selectByVisibleText(data.fromAccountId);
+    } catch (err) {
+      await this.fromAccountId.selectByAttribute("value", data.fromAccountId);
+    }
   }
 
   async sendPayment() {

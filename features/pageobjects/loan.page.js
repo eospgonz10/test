@@ -27,6 +27,7 @@ class LoanPage extends Page {
 
   async open() {
     await super.open("requestloan");
+    await browser.waitUntil(async () => (await browser.execute(() => document.readyState)) === 'complete', { timeout: 20000 });
     await this.amount.waitForDisplayed({ timeout: 20000 });
   }
 
